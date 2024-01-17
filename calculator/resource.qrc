@@ -3,5 +3,6 @@
         <file>images/Bg-layer.png</file>
         <file>images/Button-active.png</file>
         <file>images/Button-off.png</file>
+        <file>images/Asset 110@4x.png</file>
     </qresource>
 </RCC>

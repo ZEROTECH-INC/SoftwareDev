@@ -19,12 +19,13 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
     QHBoxLayout, QLabel, QLayout, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QStackedWidget,
     QStatusBar, QTabWidget, QVBoxLayout, QWidget)
+import rc_resource
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(305, 556)
+        MainWindow.resize(317, 556)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet(u"STYLE-SHEET-SOURCE-CODE_\n"
 "/*EERO TECHNOLOGIES INC. /////////// */\n"
@@ -134,13 +135,40 @@ class Ui_MainWindow(object):
 "	background-color: transparent;\n"
 "	color: #ffeaea;\n"
 "}\n"
+"\n"
 "QComboBox {\n"
 "	padding: 2px;\n"
 "	padding-left: 7px;\n"
 "	color: #ffeaea;\n"
 "	background: #131313;\n"
+"	border-radius: 20px;\n"
 "	border: none;\n"
 "}\n"
+"QComboBox QListView {\n"
+"	font-size: 12px;\n"
+"	border: 1px solid rgba(0,0,0,10%);\n"
+"	background: transparent;\n"
+"	outline: 0px;  /*\u53bb\u865a\u7ebf*/\n"
+"	padding: 10px;\n"
+"}\n"
+"QComboBox QListView::item{\n"
+"	padding-left: 10px;\n"
+"	padding-right: 10px;\n"
+"	background-color:#131313;\n"
+"	border-bottom: .5px solid rgb(27, 27, 27) ;\n"
+"	padding: 5px;\n"
+"}\n"
+"Q"
+                        "ComboBox QListView::item:hover{\n"
+"   background-color:#1e90ff;\n"
+"	border-radius: 3px;\n"
+"}\n"
+"QComboBox QListView::item:selected{\n"
+"   background-color:#1e90ff;\n"
+"	border-radius: 3px;\n"
+"}\n"
+"\n"
+"\n"
 "#pushButton_15:hover, #pushButton_16:hover {\n"
 "	background-color: rgb(83, 83, 83);\n"
 "	border-radius: 10px;\n"
@@ -272,7 +300,7 @@ class Ui_MainWindow(object):
         font2.setBold(False)
         self.headlineButton.setFont(font2)
         icon3 = QIcon()
-        icon3.addFile(u"../../../../Adobe-AI_Files/Png_Icons_/Eero-Tech-Inc-PNG-Art-Files_/4x/Asset 1@4x.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u":/new/prefix1/images/Asset 110@4x.png", QSize(), QIcon.Normal, QIcon.Off)
         self.headlineButton.setIcon(icon3)
         self.headlineButton.setIconSize(QSize(20, 20))
 
@@ -315,7 +343,7 @@ class Ui_MainWindow(object):
         self.lineEdit_2 = QLineEdit(self.currency_1)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
 
-        self.horizontalLayout_3.addWidget(self.lineEdit_2)
+        self.horizontalLayout_3.addWidget(self.lineEdit_2, 0, Qt.AlignLeft)
 
 
         self.verticalLayout_3.addWidget(self.currency_1, 0, Qt.AlignLeft)
@@ -351,7 +379,7 @@ class Ui_MainWindow(object):
         self.lineEdit_3.setObjectName(u"lineEdit_3")
         self.lineEdit_3.setDragEnabled(True)
 
-        self.horizontalLayout_4.addWidget(self.lineEdit_3)
+        self.horizontalLayout_4.addWidget(self.lineEdit_3, 0, Qt.AlignLeft)
 
 
         self.verticalLayout_3.addWidget(self.currency_2, 0, Qt.AlignLeft)
@@ -783,7 +811,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.background.setCurrentIndex(1)
+        self.background.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -802,18 +830,20 @@ class Ui_MainWindow(object):
         self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"Korean - Won", None))
         self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"Nigerian - Naira", None))
         self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"United Kingdom - Pound", None))
-        self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"United States - Dollar", None))
+        self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"United State Of America - Dollar", None))
 
-        self.lineEdit_2.setText(QCoreApplication.translate("MainWindow", u"$ 0", None))
+        self.lineEdit_2.setText("")
+        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"$ 0", None))
         self.comboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Canada - Dollar", None))
         self.comboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"China - Yuan", None))
         self.comboBox_2.setItemText(2, QCoreApplication.translate("MainWindow", u"Ghana - Cedi", None))
         self.comboBox_2.setItemText(3, QCoreApplication.translate("MainWindow", u"Korean - Won", None))
         self.comboBox_2.setItemText(4, QCoreApplication.translate("MainWindow", u"Nigerian - Naira", None))
         self.comboBox_2.setItemText(5, QCoreApplication.translate("MainWindow", u"United Kingdom - Pound", None))
-        self.comboBox_2.setItemText(6, QCoreApplication.translate("MainWindow", u"United States - Dollar", None))
+        self.comboBox_2.setItemText(6, QCoreApplication.translate("MainWindow", u"United State Of America - Dollar", None))
 
-        self.lineEdit_3.setText(QCoreApplication.translate("MainWindow", u"$ 0", None))
+        self.lineEdit_3.setText("")
+        self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"$ 0", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"1 GHS = 0.08403 USD\n"
 "Updated 11/16/2023 6:08 AM\n"
 "Offline. Please check your Network Settings", None))
@@ -833,7 +863,8 @@ class Ui_MainWindow(object):
         self.bttn_3.setText(QCoreApplication.translate("MainWindow", u"3", None))
         self.decimalBtn.setText(QCoreApplication.translate("MainWindow", u".", None))
         self.headlineButton_2.setText(QCoreApplication.translate("MainWindow", u" Calculator", None))
-        self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.lineEdit.setText("")
+        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
         self.pushButton_33.setText(QCoreApplication.translate("MainWindow", u"MC", None))
         self.pushButton_34.setText(QCoreApplication.translate("MainWindow", u"MR", None))
         self.pushButton_35.setText(QCoreApplication.translate("MainWindow", u"M+", None))

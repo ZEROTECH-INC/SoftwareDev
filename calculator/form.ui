@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>305</width>
+    <width>317</width>
     <height>556</height>
    </rect>
   </property>
@@ -123,13 +123,39 @@ QLineEdit{
 	background-color: transparent;
 	color: #ffeaea;
 }
+
 QComboBox {
 	padding: 2px;
 	padding-left: 7px;
 	color: #ffeaea;
 	background: #131313;
+	border-radius: 20px;
 	border: none;
 }
+QComboBox QListView {
+	font-size: 12px;
+	border: 1px solid rgba(0,0,0,10%);
+	background: transparent;
+	outline: 0px;  /*去虚线*/
+	padding: 10px;
+}
+QComboBox QListView::item{
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color:#131313;
+	border-bottom: .5px solid rgb(27, 27, 27) ;
+	padding: 5px;
+}
+QComboBox QListView::item:hover{
+   background-color:#1e90ff;
+	border-radius: 3px;
+}
+QComboBox QListView::item:selected{
+   background-color:#1e90ff;
+	border-radius: 3px;
+}
+
+
 #pushButton_15:hover, #pushButton_16:hover {
 	background-color: rgb(83, 83, 83);
 	border-radius: 10px;
@@ -308,7 +334,7 @@ QMainWindow #windowTitle_2 {
        <enum>QFrame::Raised</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="currencyPage">
        <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0">
@@ -375,8 +401,8 @@ QMainWindow #windowTitle_2 {
                  <string> Currency</string>
                 </property>
                 <property name="icon">
-                 <iconset>
-                  <normaloff>../../../../Adobe-AI_Files/Png_Icons_/Eero-Tech-Inc-PNG-Art-Files_/4x/Asset 1@4x.png</normaloff>../../../../Adobe-AI_Files/Png_Icons_/Eero-Tech-Inc-PNG-Art-Files_/4x/Asset 1@4x.png</iconset>
+                 <iconset resource="resource.qrc">
+                  <normaloff>:/new/prefix1/images/Asset 110@4x.png</normaloff>:/new/prefix1/images/Asset 110@4x.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -441,7 +467,7 @@ QMainWindow #windowTitle_2 {
                 </item>
                 <item>
                  <property name="text">
-                  <string>United States - Dollar</string>
+                  <string>United State Of America - Dollar</string>
                  </property>
                 </item>
                </widget>
@@ -473,9 +499,12 @@ QMainWindow #windowTitle_2 {
               <property name="bottomMargin">
                <number>0</number>
               </property>
-              <item>
+              <item alignment="Qt::AlignLeft">
                <widget class="QLineEdit" name="lineEdit_2">
                 <property name="text">
+                 <string/>
+                </property>
+                <property name="placeholderText">
                  <string>$ 0</string>
                 </property>
                </widget>
@@ -535,7 +564,7 @@ QMainWindow #windowTitle_2 {
                 </item>
                 <item>
                  <property name="text">
-                  <string>United States - Dollar</string>
+                  <string>United State Of America - Dollar</string>
                  </property>
                 </item>
                </widget>
@@ -561,13 +590,16 @@ QMainWindow #windowTitle_2 {
               <property name="bottomMargin">
                <number>0</number>
               </property>
-              <item>
+              <item alignment="Qt::AlignLeft">
                <widget class="QLineEdit" name="lineEdit_3">
                 <property name="text">
-                 <string>$ 0</string>
+                 <string/>
                 </property>
                 <property name="dragEnabled">
                  <bool>true</bool>
+                </property>
+                <property name="placeholderText">
+                 <string>$ 0</string>
                 </property>
                </widget>
               </item>
@@ -940,8 +972,8 @@ Offline. Please check your Network Settings</string>
                     <string> Calculator</string>
                    </property>
                    <property name="icon">
-                    <iconset>
-                     <normaloff>../../../../Adobe-AI_Files/Png_Icons_/Eero-Tech-Inc-PNG-Art-Files_/4x/Asset 1@4x.png</normaloff>../../../../Adobe-AI_Files/Png_Icons_/Eero-Tech-Inc-PNG-Art-Files_/4x/Asset 1@4x.png</iconset>
+                    <iconset resource="resource.qrc">
+                     <normaloff>:/new/prefix1/images/Asset 110@4x.png</normaloff>:/new/prefix1/images/Asset 110@4x.png</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
@@ -965,10 +997,13 @@ Offline. Please check your Network Settings</string>
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string/>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string>0</string>
              </property>
             </widget>
            </item>
@@ -1378,6 +1413,8 @@ Offline. Please check your Network Settings</string>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
