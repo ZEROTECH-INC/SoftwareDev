@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "SpeedConvert"
+version = "0.1.0"
+description = "Convert speeds between m/s, km/h, and mph."
+authors = [
+    {name="ZSARPONG", email="ziisarpong@gmail.com"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
